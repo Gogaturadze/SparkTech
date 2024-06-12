@@ -1,0 +1,35 @@
+.line {
+  border: 1px solid black;
+  opacity: 0.3;
+}
+.about-us {
+  margin: 50px 0 50px 0;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  h1 {
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .content {
+    margin-bottom: 20px;
+
+    h2 {
+      color: black;
+      opacity: 0.9;
+      margin-bottom: 10px;
+      font-family: "Roboto", sans-serif;
+    }
+
+    p {
+      line-height: 1.6;
+      opacity: 0.8;
+      font-family: "Roboto", sans-serif;
+    }
+  }
+}

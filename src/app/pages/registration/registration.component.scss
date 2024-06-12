@@ -1,0 +1,60 @@
+.line {
+  border: 1px solid black;
+  opacity: 0.3;
+}
+.container {
+  max-width: 400px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  div {
+    color: red;
+  }
+
+  label {
+    margin-bottom: 5px;
+    font-family: "Roboto", sans-serif;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #00b35c;
+  }
+}
+input.ng-invalid.ng-touched {
+  border-color: red;
+}

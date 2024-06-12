@@ -1,0 +1,55 @@
+.line {
+  border: 1px solid black;
+  opacity: 0.3;
+}
+.container {
+  max-width: 400px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-family: "Roboto", sans-serif;
+  }
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+}
+
+input[type="email"],
+input[type="password"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+button {
+  padding: 10px;
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "Roboto", sans-serif;
+}
+
+button:hover {
+  background-color: #00b35c;
+}

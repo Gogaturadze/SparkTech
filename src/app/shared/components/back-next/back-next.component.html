@@ -1,0 +1,11 @@
+<div>
+  <button
+    [routerLink]="['/' + backAddress]"
+    [style.display]="isFirstButtonHidden ? 'none' : 'block'"
+  >
+    Back
+  </button>
+  <button [routerLink]="['/' + nextAddress]">
+    {{ primaryLabel }}
+  </button>
+</div>

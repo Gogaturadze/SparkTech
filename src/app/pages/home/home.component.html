@@ -1,0 +1,53 @@
+<!-- <app-navbar></app-navbar> -->
+<!-- main banner -->
+<div class="banner-content">
+  <div class="container banner-box">
+    <div class="banner-left">
+      <h3>Pro.Beyond.</h3>
+      <h2>IPhone 15 Pro</h2>
+      <p>Created to change everything for the better. For everyone</p>
+      <app-shopbutton colorType="type1"></app-shopbutton>
+    </div>
+    <div class="banner-right">
+      <div>
+        <img src="../../../assets/images/banner-img.png" alt="banner-img" />
+      </div>
+    </div>
+  </div>
+</div>
+<app-smallbanners></app-smallbanners>
+<app-category></app-category>
+<div>
+  <div class="container card-header">
+    <h4>Bestseller</h4>
+    <span></span>
+  </div>
+  <div class="container card-box">
+    <div *ngFor="let product of bestSeller; let i = index">
+      <app-cards
+        [productImages]="product.images[0]"
+        [productName]="product.title"
+        [productPrice]="product.price.current"
+        [productId]="product._id"
+      ></app-cards>
+    </div>
+  </div>
+</div>
+<app-banners></app-banners>
+<div>
+  <div class="container card-header">
+    <h4>Discounts up to -50%</h4>
+  </div>
+  <div class="container card-box">
+    <div *ngFor="let product of discount; let i = index">
+      <app-cards
+        [productImages]="product.images[0]"
+        [productName]="product.title"
+        [productPrice]="product.price.current"
+        [productBeforePrice]="product.price.beforeDiscount"
+        [productId]="product._id"
+      ></app-cards>
+    </div>
+  </div>
+  <!-- <app-footer></app-footer> -->
+</div>

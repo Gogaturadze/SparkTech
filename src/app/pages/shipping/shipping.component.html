@@ -1,0 +1,54 @@
+<div class="line"></div>
+<section>
+  <app-checkoutsteps
+    step1="non-active"
+    step2="active-step"
+    step3="non-active"
+  ></app-checkoutsteps>
+  <div class="container">
+    <h3>Shipment Method</h3>
+    <div class="ship-box">
+      <form action="#">
+        <div class="method">
+          <div class="method-radio">
+            <!-- <input type="radio" name="address" id="address" checked /> -->
+            <input
+              type="radio"
+              name="address"
+              id="address"
+              value="Free"
+              (change)="onMethodChange('Free')"
+              checked
+            />
+            <label for="address">Free</label>
+            <h5>Regulary shipment</h5>
+          </div>
+          <div class="days">
+            <h6>7 Days</h6>
+          </div>
+        </div>
+        <div class="method">
+          <div class="method-radio">
+            <!-- <input type="radio" name="address" id="non-free" /> -->
+            <input
+              type="radio"
+              name="address"
+              id="non-free"
+              value="Non-Free"
+              (change)="onMethodChange('8.50')"
+            />
+            <label for="non-free">$8.50</label>
+            <h5>Get your delivery as soon as possible</h5>
+          </div>
+          <div class="days">
+            <h6>1-2 Days</h6>
+          </div>
+        </div>
+      </form>
+    </div>
+    <app-back-next
+      backAddress="selAddress"
+      nextAddress="payment"
+    ></app-back-next>
+  </div>
+</section>

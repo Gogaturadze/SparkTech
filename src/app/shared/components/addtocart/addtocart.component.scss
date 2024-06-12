@@ -1,0 +1,42 @@
+div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 16px;
+  button {
+    max-width: 260px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 56px;
+    gap: 8px;
+    background: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #000000;
+    transition: all 0.3s;
+    &:hover {
+      border-color: transparent;
+      background-color: #61cc37;
+      color: white;
+    }
+  }
+  :nth-child(2) {
+    border: none;
+    background: #000000;
+    color: #ffffff;
+
+    &:hover {
+      background-color: #ffa500;
+    }
+  }
+}

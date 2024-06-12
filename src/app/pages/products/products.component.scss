@@ -1,0 +1,127 @@
+.line {
+  border: 1px solid black;
+  opacity: 0.3;
+}
+.products-header {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  gap: 16px;
+  a {
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: #a4a4a4;
+  }
+}
+.products-sec {
+  display: flex;
+  gap: 32px;
+  .product-filter {
+    max-width: 256px;
+    width: 100%;
+    .category {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .category > :nth-child(1) {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0px;
+      gap: 10px;
+      border-bottom: 0.5px solid #b5b5b5;
+      h4 {
+        font-family: "Roboto", sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: 0.03em;
+        color: #000000;
+      }
+      button {
+        background: none;
+        border-style: none;
+        cursor: pointer;
+      }
+    }
+    #radioForm {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      label {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+      }
+    }
+  }
+}
+.product-box {
+  width: 100%;
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    .selected-products {
+      h5 {
+        font-family: "Roboto", sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 16px;
+        letter-spacing: 0.03em;
+
+        color: #6c6c6c;
+        padding-right: 6px;
+        span {
+          font-family: "Roboto", sans-serif;
+          font-weight: 500;
+          font-size: 20px;
+          color: #000000;
+        }
+      }
+    }
+    .filter-by {
+      select {
+        display: flex;
+        align-items: center;
+        padding: 8px 16px;
+        gap: 8px;
+        background: #ffffff;
+        border: 0.5px solid #d4d4d4;
+        border-radius: 8px;
+      }
+    }
+  }
+}
+.card-grid {
+  margin: 24px 0;
+  grid-area: card;
+  display: grid;
+  // grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 24px;
+  justify-items: stretch;
+  grid-template-areas:
+    "card1 card2 card3"
+    "card4 card5 card6"
+    "card7 card8 card9";
+}
+.next-pages {
+  display: flex;
+  justify-content: center;
+  button {
+    border-style: none;
+    background: none;
+    cursor: pointer;
+    img {
+      width: 46px;
+    }
+  }
+}

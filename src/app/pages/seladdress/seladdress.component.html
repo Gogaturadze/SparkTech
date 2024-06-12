@@ -1,0 +1,41 @@
+<div class="line"></div>
+<section>
+  <app-checkoutsteps
+    step1="active-step"
+    step2="non-active"
+    step3="non-active"
+  ></app-checkoutsteps>
+  <div class="container address-container">
+    <h3>Select Address</h3>
+    <div class="address-list">
+      <form action="#">
+        <div class="address-box">
+          <div class="address-content">
+            <div>
+              <input type="radio" name="address" id="address" checked />
+            </div>
+            <div>
+              <label for="address">{{ userInfo[0] }}</label>
+              <h5>Zipcode: {{ userInfo[1] }}</h5>
+              <h5>{{ userInfo[2] }}</h5>
+            </div>
+          </div>
+          <div class="address-edit">
+            <button>
+              <img src="../../../assets/images/checkOut/edit.png" alt="edit" />
+            </button>
+            <button>
+              <img
+                src="../../../assets/images/checkOut/delete.png"
+                alt="delete"
+              />
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container nav-container">
+    <app-back-next backAddress="cart" nextAddress="shipping"></app-back-next>
+  </div>
+</section>

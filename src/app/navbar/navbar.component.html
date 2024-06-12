@@ -1,0 +1,65 @@
+<header>
+  <div class="container">
+    <a class="logo-box" href="">
+      <img src="../../assets/images/STLOGO.png" alt="STLOGO" />
+    </a>
+    <div class="search-box">
+      <img src="../../assets/images/navIcon/searchIcon.png" alt="search-icon" />
+      <input
+        type="text"
+        placeholder="Search"
+        [(ngModel)]="searchQuery"
+        (ngModelChange)="search()"
+      />
+      <div class="search-results-container">
+        <div *ngIf="loading" class="loading">Loading...</div>
+        <ul class="search-results">
+          <li *ngFor="let product of searchResults">
+            <a [href]="'/review/' + product._id">{{ product.title }}</a>
+          </li>
+          <li
+            *ngIf="searchResults.length === 0 && !loading"
+            class="no-results"
+          ></li>
+        </ul>
+      </div>
+    </div>
+    <div class="nav-box">
+      <nav>
+        <a href="">Home</a>
+        <a [routerLink]="['/about']">About Us</a>
+        <a [routerLink]="['/contactUs']">Contact</a>
+      </nav>
+    </div>
+    <div class="favcart-box">
+      <a href=""
+        ><img src="../../assets/images/navIcon/Favorites.png" alt="Favorites"
+      /></a>
+      <div class="cart-box">
+        <a [routerLink]="['/cart']"
+          ><img src="../../assets/images/navIcon/Cart1.png" alt="Cart"
+        /></a>
+        <div
+          class="cartQuantity"
+          [style.visibility]="numberOfProducts == 0 ? 'hidden' : 'visible'"
+        >
+          {{ numberOfProducts }}
+        </div>
+      </div>
+      <div class="user-logo">
+        <img src="../../assets/images/navIcon/User.png" alt="User Logo" />
+        <div class="dropdown-menu">
+          <ul *ngIf="authService.isAuthenticat(); else guestOptions">
+            <li (click)="logout()">Sign Out</li>
+          </ul>
+          <ng-template #guestOptions>
+            <ul>
+              <li (click)="navigateTo('registration')">Register</li>
+              <li (click)="navigateTo('signIn')">Sign In</li>
+            </ul>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

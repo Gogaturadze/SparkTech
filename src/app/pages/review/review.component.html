@@ -1,0 +1,266 @@
+<div class="line"></div>
+<section>
+  <div class="container review-box">
+    <div class="product-img">
+      <img src="{{ productDetail.thumbnail }}" alt="product" />
+    </div>
+    <div class="item-detail">
+      <div class="item-name">
+        <h2>{{ productDetail.title }}</h2>
+        <div>
+          <h4>{{ productDetail.price.current | currency : "USD" }}</h4>
+          <span>{{
+            productDetail.price.beforeDiscount | currency : "USD"
+          }}</span>
+        </div>
+      </div>
+      <div class="color">
+        <h5>Select color :</h5>
+        <div><a href=""></a></div>
+      </div>
+      <div class="info-gaps">
+        <div class="memory-size">
+          <a disabled>128gb</a>
+          <a>128gb</a>
+        </div>
+        <div class="manufactory-box">
+          <div class="product-info">
+            <div>
+              <img
+                src="../../../assets/images/itemDetail/Screensize.png"
+                alt="screen size"
+              />
+            </div>
+            <div>
+              <h5>Screen Size</h5>
+              <h4>6.7</h4>
+            </div>
+          </div>
+          <div class="product-info">
+            <div>
+              <img src="../../../assets/images/itemDetail/CPU.png" alt="CPU" />
+            </div>
+            <div>
+              <h5>CPU</h5>
+              <h4>Apple A16 Bionic</h4>
+            </div>
+          </div>
+          <div class="product-info">
+            <div>
+              <img
+                src="../../../assets/images/itemDetail/Cores.png"
+                alt="Number of Cores"
+              />
+            </div>
+            <div>
+              <h5>Number of Cores</h5>
+              <h4>6</h4>
+            </div>
+          </div>
+          <div class="product-info">
+            <div>
+              <img
+                src="../../../assets/images/itemDetail/camera.png"
+                alt="Main Camera"
+              />
+            </div>
+            <div>
+              <h5>Main camera</h5>
+              <h4>48-12-12 MP</h4>
+            </div>
+          </div>
+          <div class="product-info">
+            <div>
+              <img
+                src="../../../assets/images/itemDetail/frontCamera.png"
+                alt="Front-camera"
+              />
+            </div>
+            <div>
+              <h5>Front-camera</h5>
+              <h4>12 MP</h4>
+            </div>
+          </div>
+          <div class="product-info">
+            <div>
+              <img
+                src="../../../assets/images/itemDetail/batteryIcon.png"
+                alt="Battery"
+              />
+            </div>
+            <div>
+              <h5>Battery capacity</h5>
+              <h4>4323 mAh</h4>
+            </div>
+          </div>
+        </div>
+        <div class="review">
+          <p>
+            {{ productDetail.description }}
+          </p>
+        </div>
+        <div class="buttons">
+          <app-addtocart [productId]="productDetail._id"></app-addtocart>
+        </div>
+        <div class="features">
+          <div class="feature-item">
+            <div class="features-img">
+              <img
+                src="../../../assets/images/itemDetail/delivery.png"
+                alt="delivery"
+              />
+            </div>
+            <div>
+              <h5>Free Delivery</h5>
+              <h4>1-2 day</h4>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="features-img">
+              <img
+                src="../../../assets/images/itemDetail/stock.png"
+                alt="In Stock"
+              />
+            </div>
+            <div>
+              <h5>In Stock</h5>
+              <h4>{{ productDetail.stock }}</h4>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="features-img">
+              <img
+                src="../../../assets/images/itemDetail/verify.png"
+                alt="Guaranteed"
+              />
+            </div>
+            <div>
+              <h5>Guaranteed</h5>
+              <h4>{{ productDetail.warranty }}</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="overal-section">
+  <div class="container rate-container">
+    <div>
+      <h3>Reviews</h3>
+    </div>
+    <div class="overal-rating">
+      <div class="sum-rate">
+        <h2>{{ productDetail.rating }}</h2>
+        <h5>of 125 revies</h5>
+        <div class="star">
+          <div>
+            <img
+              src="../../../assets/images/reviewIcon/Star 3.png"
+              alt="star-icon"
+            />
+          </div>
+          <div>
+            <img
+              src="../../../assets/images/reviewIcon/Star 3.png"
+              alt="star-icon"
+            />
+          </div>
+          <div>
+            <img
+              src="../../../assets/images/reviewIcon/Star 3.png"
+              alt="star-icon"
+            />
+          </div>
+          <div>
+            <img
+              src="../../../assets/images/reviewIcon/Star 3.png"
+              alt="star-icon"
+            />
+          </div>
+          <div>
+            <img
+              src="../../../assets/images/reviewIcon/Star 5-1.png"
+              alt="star-icon"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="rate-types">
+        <div>
+          <h4>Excelent</h4>
+          <div class="rate-line">
+            <div class="excellent"></div>
+          </div>
+        </div>
+        <div>
+          <h4>Good</h4>
+          <div class="rate-line">
+            <div class="good"></div>
+          </div>
+        </div>
+        <div>
+          <h4>Average</h4>
+          <div class="rate-line">
+            <div class="average"></div>
+          </div>
+        </div>
+        <div>
+          <h4>Poor</h4>
+          <div class="rate-line">
+            <div class="poor"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="leave-comment">
+      <form action="#">
+        <input type="text" name="" id="" placeholder="Leave Comment" />
+      </form>
+    </div>
+  </div>
+  <div class="container comment-list">
+    <div class="comment">
+      <div>
+        <img
+          src="../../../assets/images/reviewIcon/UserPic.png"
+          alt="UserPic"
+        />
+      </div>
+      <div>
+        <h3>Name username</h3>
+        <p>
+          I was a bit nervous to be buying a secondhand phone from Amazon, but I
+          couldn’t be happier with my purchase!! I have a pre-paid data plan so
+          I was worried that this phone wouldn’t connect with my data plan,
+          since the new phones don’t have the physical Sim tray anymore, but
+          couldn’t have been easier! I bought an Unlocked black iPhone 14 Pro
+          Max in excellent condition and everything is PERFECT. It was super
+          easy to set up and the phone works and looks great. It truly was in
+          excellent condition. Highly recommend!!!🖤
+        </p>
+      </div>
+    </div>
+    <div class="comment">
+      <div>
+        <img
+          src="../../../assets/images/reviewIcon/UserPic.png"
+          alt="UserPic"
+        />
+      </div>
+      <div>
+        <h3>Name username</h3>
+        <p>
+          I was a bit nervous to be buying a secondhand phone from Amazon, but I
+          couldn’t be happier with my purchase!! I have a pre-paid data plan so
+          I was worried that this phone wouldn’t connect with my data plan,
+          since the new phones don’t have the physical Sim tray anymore, but
+          couldn’t have been easier! I bought an Unlocked black iPhone 14 Pro
+          Max in excellent condition and everything is PERFECT. It was super
+          easy to set up and the phone works and looks great. It truly was in
+          excellent condition. Highly recommend!!!🖤
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

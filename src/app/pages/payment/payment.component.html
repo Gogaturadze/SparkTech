@@ -1,0 +1,112 @@
+<div class="line"></div>
+<section>
+  <app-checkoutsteps
+    step1="non-active"
+    step2="non-active"
+    step3="active-step"
+  ></app-checkoutsteps>
+
+  <div class="container">
+    <div class="payment-left-side">
+      <h3>Summery</h3>
+      <div class="card-list" *ngFor="let product of productsInCart">
+        <div class="item">
+          <div class="item-img">
+            <img [src]="product.images" alt="product-image" />
+            <div class="item-title">
+              <h4>{{ product.title }}</h4>
+            </div>
+          </div>
+          <div class="item-price">
+            <h4>{{ product.pricePerQuantity }}</h4>
+          </div>
+        </div>
+      </div>
+      <div class="shipping">
+        <h5>Address</h5>
+        <h4>{{ userInfo[0] }}</h4>
+      </div>
+      <div class="ship-method">
+        <h5>Shipment method</h5>
+        <h4>{{ shippingMethod }}</h4>
+      </div>
+      <div class="total">
+        <div>
+          <h3>Subtotal</h3>
+          <h3>{{ subTotal | currency : "USD" }}</h3>
+        </div>
+        <div>
+          <h5>Estimated Tax</h5>
+          <h3>{{ tax | currency : "USD" }}</h3>
+        </div>
+        <div>
+          <h5>Estimated shipping & Handling</h5>
+          <h3>{{ shippingMethod }}</h3>
+        </div>
+        <div>
+          <h3>Total</h3>
+          <h3>{{ total | currency : "USD" }}</h3>
+        </div>
+      </div>
+    </div>
+    <div class="payment-right-side">
+      <h3>Payment</h3>
+      <div class="pay-box">
+        <div class="card-div">
+          <img
+            src="../../../assets/images/checkOut/creditCard.png"
+            alt="creditCard"
+          />
+          <div class="card-info">
+            <div>
+              <p>{{ cardNumber }}</p>
+              <div class="bottom-info">
+                <h5>{{ cardholderName }}</h5>
+                <div>
+                  <h6>{{ expDate }}</h6>
+                  <h6>{{ cvv }}</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="credit-info">
+          <input
+            type="text"
+            name="cardNumber"
+            placeholder="Card Number"
+            [(ngModel)]="cardNumber"
+            minlength="16"
+            maxlength="16"
+          />
+          <input
+            type="text"
+            name="cardholderName"
+            placeholder="Cardholder Name"
+            [(ngModel)]="cardholderName"
+          />
+          <div>
+            <input
+              type="text"
+              name="expDate"
+              placeholder="Exp. Date"
+              [(ngModel)]="expDate"
+              maxlength="7"
+              appExpDate
+            />
+            <input
+              type="text"
+              name="cvv"
+              placeholder="CVV"
+              [(ngModel)]="cvv"
+              maxlength="3"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="pay">
+        <button (click)="onCheckout()">Buy Now</button>
+      </div>
+    </div>
+  </div>
+</section>

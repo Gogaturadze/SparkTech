@@ -1,0 +1,88 @@
+<!-- <app-navbar></app-navbar> -->
+<div class="line"></div>
+<section>
+  <div class="container cart-container">
+    <div class="cart-left-side">
+      <h2>Shopping Cart</h2>
+      <div class="cart-list" *ngFor="let product of productsInCart">
+        <div class="cart-item">
+          <div class="item-img">
+            <img [src]="product.images" alt="item" />
+          </div>
+          <div class="item-info">
+            <h4>{{ product.title }}</h4>
+            <h5>{{ product.productId }}</h5>
+          </div>
+          <div class="cart-item-right-side">
+            <div class="item-quantity">
+              <input type="number" />
+            </div>
+            <div class="item-price">
+              <h4>{{ product.pricePerQuantity }}</h4>
+            </div>
+            <div class="remove-item">
+              <button (click)="deleteFromCart(product.productId)">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M18 6L6 18"
+                    stroke="black"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M6 6L18 18"
+                    stroke="black"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="item-devider"></div>
+      </div>
+    </div>
+    <div class="cart-right-side">
+      <div class="order-txt">
+        <h3>Order Summary</h3>
+      </div>
+      <div class="total-container">
+        <div class="discount">
+          <label for="code">Discount code / Promo code</label>
+          <input type="text" name="code" placeholder="Code" />
+          <label for="bonus">Your bonus card number</label>
+          <input type="text" name="bonus" placeholder="Enter Card Number" />
+        </div>
+        <div class="total-box">
+          <div class="subtotal">
+            <h4>Subtotal</h4>
+            <h4>{{ subTotal | currency : "USD" }}</h4>
+          </div>
+          <div class="tax">
+            <h5>Estimated Tax</h5>
+            <h4>{{ tax | currency : "USD" }}</h4>
+          </div>
+          <!-- <div class="shipping">
+            <h5>Estimated Shipping</h5>
+            <h4>$29</h4>
+          </div> -->
+          <div class="total">
+            <h4>Total</h4>
+            <h4>{{ total | currency : "USD" }}</h4>
+          </div>
+        </div>
+        <div class="checkout">
+          <button [routerLink]="['/selAddress']">Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- <app-footer></app-footer> -->

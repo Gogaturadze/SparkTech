@@ -1,0 +1,46 @@
+<!-- <app-navbar></app-navbar> -->
+<div class="line"></div>
+<div class="container products-header">
+  <a href="#">Home</a>
+  <div>></div>
+  <a href="#">Products</a>
+</div>
+<section>
+  <div class="container products-sec">
+    <div class="product-box">
+      <div class="card-header">
+        <div class="selected-products">
+          <h5>
+            Selected Products: <span>{{ products.length }}</span>
+          </h5>
+        </div>
+        <div class="filter-by">
+          <div>
+            <select id="filter-by" (change)="onFilterChange($event)">
+              <option value="rating">By Rating</option>
+              <option value="price">By Price</option>
+              <option value="issue_date">By Issue Date</option>
+              <option value="title">By Title</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="card-grid">
+        <div *ngFor="let product of products; let i = index">
+          <app-cards
+            [productImages]="product.images[0]"
+            [productName]="product.title"
+            [productPrice]="product.price.current"
+            [productId]="product._id"
+          ></app-cards>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container next-pages">
+    <button (click)="loadMore()">
+      <img src="../../../assets/images/getProducts.svg" alt="getProducts" />
+    </button>
+  </div>
+</section>
+<!-- <app-footer></app-footer> -->
